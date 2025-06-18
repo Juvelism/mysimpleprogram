@@ -1,9 +1,10 @@
-# TODO: ADD or EVEN
+# TODO: TICKETING
 
-num = int(input("Insert number: "))
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
 
-if num % 2 == 0:
-    print("Even")
+if height >= 120:
+    print("You can ride the rollercoaster")
 else:
-    print("Odd")
+    print("Sorry you have to grow taller before you can ride.")
 
