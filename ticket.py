@@ -30,6 +30,3 @@ def main():
     print(f"Enjoy the rides.")
 
 main()
-
-
-main()
