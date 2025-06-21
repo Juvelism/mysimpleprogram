@@ -13,18 +13,10 @@ nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 stock_pw = []
 
-alpha_char = int(input("Enter number of characters: "))
-char_list = random.choices(small_alphabet, k=alpha_char)
-stock_pw.append(char_list)
+a_pw = int(input("How many alphabet characters: "))
+n_pw = int(input("How many numbers: "))
 
-alpha_nums = int(input("Enter numbers: "))
-num_list = random.choices(nums, k=alpha_nums)
-stock_pw.append(num_list)
-
-generated_pw = ''
-
-for letter in stock_pw:
-    generated_pw = ''.join(letter)
-
-print(f"Generated Password: {generated_pw}")
-
+stock_pw += random.choices(small_alphabet, k=a_pw) + random.choices(nums, k=n_pw)
+random.shuffle(stock_pw)
+final_tip = ''.join(stock_pw)
+print(f"Generated password: {final_tip}")
