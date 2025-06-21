@@ -1,5 +1,4 @@
-# Pass Generator
-
+# Password Generator
 import random
 
 small_alphabet = ["a","b","c","d","e",
@@ -9,7 +8,7 @@ small_alphabet = ["a","b","c","d","e",
                   "r", "s", "t", "u",
                   "v", "w", "x", "y", "z"]
 
-nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
 
 stock_pw = []
 
