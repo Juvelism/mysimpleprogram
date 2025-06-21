@@ -1,35 +1,9 @@
 import random
-
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
-
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
-
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
+import rock_paper_scissor_source
 
 # CODE stars here
 
-game = [rock, paper, scissors]
+game = [rock_paper_scissor_source.rock, rock_paper_scissor_source.paper, rock_paper_scissor_source.scissors]
 
 while True:
     player = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. \n"))
