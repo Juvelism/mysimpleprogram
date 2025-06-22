@@ -16,13 +16,13 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 generated_list = []
 
 for i in range(1, nr_letters + 1 ):
-    generated_list += random.choice(letters)
+    generated_list.append(random.choice(letters))
 
 for i in range(1, nr_symbols + 1 ):
-    generated_list += random.choice(numbers)
+    generated_list.append(random.choice(numbers))
 
 for i in range(1, nr_symbols + 1 ):
-    generated_list += random.choice(symbols)
+    generated_list.append(random.choice(symbols))
 
 generated_pw = ''
 
