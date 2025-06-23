@@ -1,6 +1,3 @@
-from errno import ECHILD
-
-
 def get_user_info():
     user_name = input("Full name: ").title()
     user_age = int(input("Age: "))
@@ -11,13 +8,13 @@ def check_category(age):
         return 'Child'
     elif 13 >= age <= 19:
         return 'Teenager'
-    elif 20 >- age <= 59:
+    elif 20 >= age <= 59:
         return 'Adult'
     else:
         return 'Senior Citizen'
 
 def print_category(name, category):
-    print(f"{name}, you are a { category}")
+    print(f"{name}, you are a {category}.")
 
 def main():
     name, age = get_user_info()
