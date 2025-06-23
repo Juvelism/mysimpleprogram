@@ -14,8 +14,9 @@ def printing_view(name, s1, s2):
     avg_c = t_score /  2
     marks = ["Passed", "Failed"]
 
+    print("-" * 30)
     print(f"Full name: {name}")
-    print(f"Total Score: { t_score}")
+    print(f"Total Score: {t_score:.2f}")
     print(f"Average: {avg_c}")
 
     if avg_c > 75:
@@ -24,6 +25,8 @@ def printing_view(name, s1, s2):
         print(f"Remarks: {marks[1]}")
 
 def main():
-
+    name = get_student()
+    s1,s2 = get_score()
+    printing_view(name, s1, s2)
 
 main()
