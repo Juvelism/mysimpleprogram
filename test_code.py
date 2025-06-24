@@ -1,45 +1,51 @@
-import random
+# Code here
+from itertools import count
 
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i','j', 'k', 'l','m',
-           'n', 'o','p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-           'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-           'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+admin_credentials = {
+    'admin1': 'admin123',
+    'admin2': 'admin456',
+    'admin3': 'admin789'
+}
 
-numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+def get_login_input():
+    user = input("Username: ")
+    password = input("Password: ")
 
-print("Welcome to Simple Password Generator by Juvs!")
+    return user, password
 
-def get_number():
-    get_letter = int(input("How many letters? "))
-    get_num = int(input("How many numbers? "))
-    get_symbol = int(input("How many symbols? "))
+def number_of_attempt(n_attempt):
+     counts = 0
 
-    return get_letter, get_num, get_symbol
+     if n_attempt != 3:
+         counts += 1
 
-def pick_random(source,pick):
-    generated_list = []
+     return counts
 
-    for i in range(0, pick):
-        generated_list.append(random.choice(source))
+def check_credentials(user_name,user_pass):
 
-    return generated_list
+    for i in admin_credentials:
+        if user_name in i and user_pass in admin_credentials[i]:
+            return True
+        else:
+            return False
+    return None
 
-def show_result(generate_pass):
-    print(generate_pass)
-    random.shuffle(generate_pass)
-    print(generate_pass)
+def display_result(access, name, n_attempts):
 
-    g_list = ''
+    if access:
+        print(f'✅ Access granted. Welcome {name}!')
+    else:
+        print('❌ Access denied!')
+        print(f'{n_attempts} attempts left.')
 
-    for i in generate_pass:
-        g_list += i
-
-    print(f'You password is: {g_list}')
+    if n_attempts == 0:
+        print('🚫 Too many attempts. Exiting...')
 
 def main():
-    turn_1, turn_2, turn_3 = get_number()
-    final_list = (pick_random(letters,turn_1)) + (pick_random(numbers, turn_2)) + (pick_random(symbols, turn_3))
-    show_result(final_list)
+    user, password = get_login_input()
+    number_of_attempt(check_credentials(user, password))
+    display_result(check_credentials(user, password),user, number_of_attempt(check_credentials(user,password)))
+
+
 
 main()
