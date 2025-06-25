@@ -19,28 +19,18 @@ def check_credentials(user_name,user_pass):
             return False
     return None
 
-def number_attempt(counts):
 
-    remaining_attempts = 0
-
-    while remaining_attempts < 3:
-        remaining_attempts -= 1
-
-        return counts
-    return None
-def display_result(access, username, num_attempt):
+def display_result(access, username):
     if access:
-
-
         print(f'✅ Access granted. Welcome, {username}')
     else:
         print('❌ Access denied.')
-        print(f'{num_attempt} attempts left.')
+
 
 def main():
     user, password = get_login_input()
-    display_result(check_credentials(user, password), user, number_attempt(check_credentials(user,password)))
-    check_credentials(user,password)
+    display_result(check_credentials(user, password), user)
+
 
 
 main()
