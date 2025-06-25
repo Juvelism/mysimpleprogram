@@ -1,4 +1,11 @@
-def get_user(user, password):
+
+def login_details():
+    user = input("Username: ")
+    password = input("Password: ")
+
+    return user, password
+
+def access(user,password):
 
     admin_credentials = {
         'admin1': 'admin123',
@@ -6,25 +13,14 @@ def get_user(user, password):
         'admin3': 'admin789'
     }
 
-    for i in admin_credentials:
-        if user == i and password == admin_credentials[i]:
-            return True
-        else:
-            return False
-    return None
+    if user == admin_credentials[]
 
-def display(admin, user):
-    if admin:
-        print('Success')
-    else:
-        print("Failed")
 
-    print(f'Welcome {user}')
-
+def display_message(account):
+    print(f"Welcome, {account}!")
 
 def main():
-    pass
+    user, password = login_details()
+    display_message(user)
 
 main()
-
-
