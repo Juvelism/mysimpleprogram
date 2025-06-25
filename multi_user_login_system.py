@@ -11,21 +11,23 @@ def get_login_input():
     return user, password
 
 def check_credentials(user_name,user_pass):
-    count
+
     for i in admin_credentials:
-        if user_name in admin_credentials and user_pass in admin_credentials[i]:
-            return '✅ Access granted'
+        if user_name == i and user_pass == admin_credentials[i]:
+            return True
         else:
-            return  '❌ Access denied'
+            return False
+    return None
 
-    return False
-
-def display_result(access, message):
-
-    print(f'Welcome. {access}')
+def display_result(access, username):
+    if access:
+        print(f'✅ Access granted. Welcome, {username}')
+    else:
+        print('❌ Access denied.')
 
 def main():
     user, password = get_login_input()
-    check_credentials(user, password)
+    display_result(check_credentials(user, password), user)
+
 
 main()
