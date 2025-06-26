@@ -13,13 +13,13 @@ def check_credentials():
     for i in admin_credentials:
         if user == i and password == admin_credentials[i]:
             return user
-        else:
-            return False
-    return None
+
+    return False
 
 
 def display_result():
 
+    print("-- ADMIN LOGIN --")
     attempts = 3
     while attempts > 0:
         user =  check_credentials()
@@ -28,12 +28,10 @@ def display_result():
             print(f'✅ Access granted. Welcome, {user}')
             break
         else:
-            print('❌ Access denied.')
             attempts -= 1
-            print(f'{attempts} attempts left.')
+            print(f'❌ Access denied. {attempts} attempts left.')
+
 
 def main():
    display_result()
-
-
 main()
