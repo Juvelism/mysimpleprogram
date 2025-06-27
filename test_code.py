@@ -23,7 +23,7 @@ for letter in chosen_word:
     if letter == guess:
         display.append(letter)
     else:
-        display += '_'
+        display.append('_')
 
 final_display = ''
 
