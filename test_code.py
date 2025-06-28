@@ -1,33 +1,34 @@
 import random
-word_list = ["aardvark", "baboon", "camel"]
 
-chosen_word = random.choice(word_list)
-print(chosen_word)
+def user_choice():
+    user = input('Guess a letter: ')
+    return user
 
-# TODO-1: Create a "placeholder" with the same number of blanks as the chosen_word
+def word_generator():
+    word_list = ["aardvark", "baboon", "camel"]
+    guess_word = random.choice(word_list)
+    return guess_word
 
-placeholder = ''
+def char_display(guess_letter):
 
-for i in range(len(chosen_word)):
-    placeholder += '_'
+    display = ''
 
-print(placeholder)
+    for char in guess_letter:
+        if guess_letter == char:
+            display += guess_letter
+        else:
+            display += '_'
 
-guess = input("Guess a letter: ").lower()
+    return display
 
-# TODO-2: Create a "display" that puts the guess letter in the right positions and _ in the rest of the string.
+def display_view(pick_word,guess_w):
+    print(pick_word)
+    print(guess_w)
 
-display = []
+def main():
+    letter_convert = word_generator()
+    display_view(letter_convert,char_display(letter_convert))
+    user_choice()
 
-for letter in chosen_word:
-    if letter == guess:
-        display.append(letter)
-    else:
-        display.append('_')
 
-final_display = ''
-
-for final in display:
-    final_display += final
-
-print(final_display)
+main()
