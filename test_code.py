@@ -12,23 +12,25 @@ def word_generator():
 def char_display(guess_letter):
 
     display = ''
+    words = word_generator()
 
-    for char in guess_letter:
+    for char in words:
         if guess_letter == char:
             display += guess_letter
         else:
             display += '_'
 
-    return display
+    print(display)
 
-def display_view(pick_word,guess_w):
-    print(pick_word)
-    print(guess_w)
+def display_output(generated_word):
+    print(generated_word)
 
 def main():
-    letter_convert = word_generator()
-    display_view(letter_convert,char_display(letter_convert))
+    random_word = word_generator()
+    display_output(random_word)
+    char_display(random_word)
     user_choice()
+
 
 
 main()
