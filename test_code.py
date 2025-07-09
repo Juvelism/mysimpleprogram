@@ -14,12 +14,16 @@ is_guessing = True
 
 guessed_word = []
 
+lives = 5
+
 while is_guessing:
 
     guess = input("Guess a letter: ").lower()
 
     if guess in chosen_word:
         guessed_word.append(guess)
+    else:
+        lives -= 1
 
     display = ""
     for letter in chosen_word:
@@ -28,5 +32,6 @@ while is_guessing:
         else:
             display += "_"
 
-    print(display)
 
+    print(display)
+    print(lives)
