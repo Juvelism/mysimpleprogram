@@ -12,18 +12,21 @@ print(placeholder)
 
 is_guessing = True
 
-
+guessed_word = []
 
 while is_guessing:
 
     guess = input("Guess a letter: ").lower()
 
-    display = ""
+    if guess in chosen_word:
+        guessed_word.append(guess)
 
+    display = ""
     for letter in chosen_word:
-        if letter in guess:
+        if letter in guessed_word:
             display += letter
         else:
             display += "_"
 
     print(display)
+
