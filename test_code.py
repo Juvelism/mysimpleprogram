@@ -1,9 +1,11 @@
 import random
 word_list = ["aardvark", "baboon", "camel"]
 
+# PRINT THE CHOSEN WORD
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
+# PRINT THE UNDERLINE AS TEXT
 placeholder = ""
 word_length = len(chosen_word)
 for position in range(word_length):
@@ -11,9 +13,7 @@ for position in range(word_length):
 print(placeholder)
 
 is_guessing = True
-
 guessed_word = []
-
 lives = 5
 
 while is_guessing:
@@ -32,6 +32,10 @@ while is_guessing:
         else:
             display += "_"
 
+    if len(chosen_word) == len(guessed_word):
+        print(chosen_word)
+        print('You won')
+        break
 
     print(display)
     print(lives)
