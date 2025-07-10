@@ -1,41 +1,29 @@
 import random
 word_list = ["aardvark", "baboon", "camel"]
 
-# PRINT THE CHOSEN WORD
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
-# PRINT THE UNDERLINE AS TEXT
 placeholder = ""
 word_length = len(chosen_word)
 for position in range(word_length):
     placeholder += "_"
 print(placeholder)
 
-is_guessing = True
-guessed_word = []
-lives = 5
+# TODO-1: - Use a while loop to let the user guess again.
 
-while is_guessing:
+is_guessing_game = True
+storing_display = []
 
+while is_guessing_game:
     guess = input("Guess a letter: ").lower()
+    display = ""
 
     if guess in chosen_word:
-        guessed_word.append(guess)
-    else:
-        lives -= 1
+        storing_display.append(guess)
 
-    display = ""
-    for letter in chosen_word:
-        if letter in guessed_word:
-            display += letter
-        else:
-            display += "_"
+  # TODO-2: Change the for loop so that you keep the previous correct letters in display.
 
-    if len(chosen_word) == len(guessed_word):
-        print(chosen_word)
-        print('You won')
-        break
 
-    print(display)
-    print(lives)
+
+    print(storing_display)
