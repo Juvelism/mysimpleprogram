@@ -12,8 +12,6 @@ print(placeholder)
 
 # TODO-1: - Use a while loop to let the user guess again.
 
-first_display = []
-
 is_game = True
 
 while is_game:
@@ -21,15 +19,12 @@ while is_game:
 
     display = ""
 
-    if guess in first_display:
-        print("You've already guessed that letter.")
+    # TODO-2: Change the for loop so that you keep the previous correct letters in display.
 
-    if guess == chosen_word:
-        first_display.append(guess)
-    else:
-        first_display.append("_")
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+        else:
+            display += "_"
 
-
-# TODO-2: Change the for loop so that you keep the previous correct letters in display.
-
-    print(first_display)
+    print(display)
