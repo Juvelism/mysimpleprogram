@@ -5,8 +5,9 @@ random_words = random.choice(words)
 print(random_words)
 
 letter_display = []
+lives = 5
 
-while True:
+while lives > 0:
 
     guess = input("Guess a letter: ")
 
@@ -17,7 +18,7 @@ while True:
     letter_display.append(guess)
 
     if guess not in random_words:
-        print("Wrong guess")
+        lives -= 1
 
     display = ""
 
@@ -32,3 +33,5 @@ while True:
         break
 
     print(display)
+    print(lives)
+print("You lose")
