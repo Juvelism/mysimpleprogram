@@ -7,12 +7,17 @@ print(random_words)
 letter_display = []
 
 while True:
+
     guess = input("Guess a letter: ")
 
     if guess in letter_display:
         print("You already guessed.")
-    else:
-        letter_display.append(guess)
+        continue
+
+    letter_display.append(guess)
+
+    if guess not in random_words:
+        print("Wrong guess")
 
     display = ""
 
@@ -21,5 +26,9 @@ while True:
             display += letters
         else:
             display += "_"
+
+    if "_" not in display:
+        print("You won the game!")
+        break
 
     print(display)
