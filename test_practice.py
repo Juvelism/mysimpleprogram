@@ -1,13 +1,25 @@
 import random
 
-random_words = ["table", "chair", "longboard"]
+words = ["abcd", "efgh", "ijkl"]
+random_words = random.choice(words)
+print(random_words)
 
-holder = ""
-get_words = random.choice(random_words)
-print(get_words)
-for letters in range(len(get_words)):
-    holder += "_"
-print(holder)
+letter_display = []
 
-################################################
+while True:
+    guess = input("Guess a letter: ")
 
+    if guess in letter_display:
+        print("You already guessed.")
+    else:
+        letter_display.append(guess)
+
+    display = ""
+
+    for letters in random_words:
+        if letters in letter_display:
+            display += letters
+        else:
+            display += "_"
+
+    print(display)
