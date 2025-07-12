@@ -9,7 +9,6 @@ for h in range(len(random_words)):
     holder += "_"
 print(holder)
 
-
 letter_display = []
 lives = 5
 
