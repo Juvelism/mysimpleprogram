@@ -4,6 +4,12 @@ words = ["abcd", "efgh", "ijkl"]
 random_words = random.choice(words)
 print(random_words)
 
+holder = ""
+for h in range(len(random_words)):
+    holder += "_"
+print(holder)
+
+
 letter_display = []
 lives = 5
 
@@ -34,4 +40,6 @@ while lives > 0:
 
     print(display)
     print(lives)
-print("You lose")
+
+else:
+    print("You lose!")
