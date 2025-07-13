@@ -1,4 +1,5 @@
 import random
+from hangman_stages import stages
 
 words = ["abcd", "efgh", "ijkl"]
 random_words = random.choice(words)
@@ -22,8 +23,11 @@ while lives > 0:
 
     letter_display.append(guess)
 
+
     if guess not in random_words:
         lives -= 1
+        for item in reversed(range(len(stages))):
+            print(stages[item])
 
     display = ""
 
