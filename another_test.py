@@ -1,3 +1,4 @@
+from hangman_stages import stages
 import random
 random_words = ["abdomen", "baywatch", "iglob"]
 
@@ -14,16 +15,13 @@ print(underscore_display)
 
 is_game_over = False
 temporary_display = []
+lives = 5
 
 while not is_game_over:
-    guess = input("Guess a letter: ").lower()
+    while lives > 0:
+        guess = input("Guess a letter: ").lower()
 
-    display = ""
-
-    if len(guess) > 2:
-        print("Only 1 letter.")
-
-    else:
+        display = ""
 
         if guess in temporary_display:
             print("You already guessed")
@@ -37,10 +35,16 @@ while not is_game_over:
             else:
                 display += "_"
 
-        if display == display_word:
+        if "_" not in display:
+            print("You win")
             is_game_over = True
+
+        if guess not in display:
+            lives -= 1
+            print(f"Lives {lives}/5")
 
 
         # print(temporary_display)
         print(display)
-print("You win")
+    print("You lose!")
+    break
