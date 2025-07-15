@@ -20,18 +20,27 @@ while not is_game_over:
 
     display = ""
 
-    if guess in temporary_display:
-        print("You already guessed")
-        continue
+    if len(guess) > 2:
+        print("Only 1 letter.")
 
-    temporary_display.append(guess)
+    else:
 
-    for letter in display:
-        if letter == guess:
-            display += guess
-        else:
-            display += "_"
+        if guess in temporary_display:
+            print("You already guessed")
+            continue
+
+        temporary_display.append(guess)
+
+        for letter in world_holder:
+            if letter in temporary_display:
+                display += letter
+            else:
+                display += "_"
+
+        if display == display_word:
+            is_game_over = True
 
 
-    print(temporary_display)
-    print(display)
+        # print(temporary_display)
+        print(display)
+print("You win")
