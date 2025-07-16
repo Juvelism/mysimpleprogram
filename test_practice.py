@@ -3,7 +3,7 @@
 import random
 from hangman_words import word_list
 
-words_display =  ""
+words_display = ""
 random_words = random.choice(word_list)
 words_display += random_words
 print(words_display)
@@ -21,7 +21,7 @@ while not game_over:
 
     display = ""
 
-    for letter in random_words:
+    for letter in words_display:
         if letter in correct_letter:
             display += letter
             correct_letter.append(guess)
