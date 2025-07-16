@@ -1,4 +1,4 @@
-from hangman_stages import stages
+# from hangman_stages import stages
 import random
 random_words = ["abdomen", "baywatch", "iglob"]
 
@@ -35,16 +35,18 @@ while not is_game_over:
             else:
                 display += "_"
 
-        if "_" not in display:
-            print("You win")
-            is_game_over = True
 
         if guess not in display:
             lives -= 1
             print(f"Lives {lives}/5")
 
+        print(display)
+
+        if "_" not in display:
+            print("You win")
+            break
 
         # print(temporary_display)
-        print(display)
+
     print("You lose!")
     break
