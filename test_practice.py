@@ -1,33 +1,15 @@
-# HANGMAN
+alphabet = ['a','b','c','d', 'e', 'f', 'g', 'h', 'i', 'j','k','l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-import random
-from hangman_words import word_list
+words = input("Enter the word: ")
+shift_count = int(input("Enter number: "))
 
-words_display = ""
-random_words = random.choice(word_list)
-words_display += random_words
-print(words_display)
+index = len(words)
+index_count = alphabet[shift_count]
 
-words_convert = ""
-for num in range(len(random_words)):
-    words_convert += "_"
-print(words_convert)
+print(f"word: {words}")
+print(f"len of word: {index}")
+print(f"shift count: {index_count}")
+print(f"{alphabet[index]}")
 
-game_over = False
-correct_letter = []
-
-while not game_over:
-    guess = input("Guess a letter: ")
-
-    display = ""
-
-    for letter in words_display:
-        if letter in correct_letter:
-            display += letter
-            correct_letter.append(guess)
-        elif letter == guess:
-            display += letter
-        else:
-            display += "_"
-
-    print(display)
+print(alphabet[index:shift_count+index])
