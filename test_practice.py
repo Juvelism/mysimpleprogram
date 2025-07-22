@@ -1,10 +1,9 @@
 def calculate_love_score(name1, name2):
-    letter_count = {"T": 0, "R": 0, "U": 0, "E": 0}
+    word = "true"
 
-
-
-
-
+    for letter in word:
+        if letter in name1:
+            print(letter)
 
 
 
