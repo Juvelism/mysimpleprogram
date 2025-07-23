@@ -1,15 +1,5 @@
-def calculate_love_score(name1, name2):
-    word = "true"
-    checked = []
-    total_count = 0
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-    for letter in word:
-        if letter not in checked:
-            count = name1.count(letter)
-            total_count += count
-            times = "time" if count == 1 else "times"
-            print(f"{letter.upper()} occurs {count} {times}")
-    print(f"Total = {total_count}")
-
-calculate_love_score("Kanye West", "Kim Kardashian")
-
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
