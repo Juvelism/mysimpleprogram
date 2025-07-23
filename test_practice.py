@@ -18,7 +18,7 @@ def encrypt(original_text, shift_amount):
         shifted_message = alphabet[message + shift_amount]
         encrypt_message += shifted_message
 
-    print(f"E{encrypt_message}")
+    print(f"Encrypted message: {encrypt_message}")
 
 
 # TODO-4: What happens if you try to shift z forwards by 9? Can you fix the code?
@@ -27,10 +27,3 @@ def encrypt(original_text, shift_amount):
 #  message.
 
 encrypt(text,shift)
-
-# Let's breakdown the problem:
-# You need a for loop to loop through each of the letters in the plain_text.
-# Find the position of each letter in the alphabet List
-# Add the user desired shift_amount to the position to get the position of the encoded letter.
-# Find the corresponding letter for that position.
-# Add each encoded letter to a new string and print it out after the loop ends.
