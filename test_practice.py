@@ -15,7 +15,8 @@ def encrypt(original_text, shift_amount):
     encrypt_message = ""
     for letter in original_text:
         message = alphabet.index(letter)
-        shifted_message = alphabet[message + shift_amount]
+        index_message = message + shift_amount
+        shifted_message = alphabet[index_message]
         encrypt_message += shifted_message
 
     print(f"Encrypted message: {encrypt_message}")
