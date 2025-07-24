@@ -14,7 +14,6 @@ def encrypt(original_text, shift_amount):
 
     return  encrypt_message
 
-
 def decrypt(text,shifts):
     decrypt_message = ""
     for letter in text:
@@ -31,20 +30,23 @@ def main():
     is_over = False
     while not is_over:
         direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-        text = input("Type your message:\n").lower()
-        shift = int(input("Type the shift number:\n"))
-        if direction == "encode":
-            en = encrypt(text,shift)
-            print(f"Here's the {direction} result : {en}")
-
-        elif direction == "decode":
-            de = decrypt(text,shift)
-            print(f"Here's the {direction} result : {de}")
-
-        again = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
-        if again == "yes":
-            main()
-        else:
+        if direction != "encode" and direction != "decode":
+            print("Invalid input")
             is_over = True
-            print("Goodbye")
+        else:
+            text = input("Type your message:\n").lower()
+            shift = int(input("Type the shift number:\n"))
+            if direction == "encode":
+                en = encrypt(text,shift)
+                print(f"Here's the {direction} result : {en}")
+            elif direction == "decode":
+                de = decrypt(text,shift)
+                print(f"Here's the {direction} result : {de}")
+
+            again = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
+            if again == "yes":
+                main()
+            else:
+                is_over = True
+                print("Goodbye")
 main()
