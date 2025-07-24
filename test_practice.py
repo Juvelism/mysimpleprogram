@@ -22,19 +22,20 @@ def decrypt(text,shifts):
         decrypt_message += shifted_message
     print(f"Decrypted message: {decrypt_message}")
 
-
 def main():
     print("Welcome to Encrypt your Message")
     is_over = False
 
     while not is_over:
         direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-        text = input("Type your message:\n").lower()
-        shift = int(input("Type the shift number:\n"))
-        if direction == "encode":
-            encrypt(text,shift)
-        elif direction == "decode":
-            decrypt(text,shift)
-        elif direction == "q":
+        if direction == "q":
             is_over = True
+        else:
+            text = input("Type your message:\n").lower()
+            shift = int(input("Type the shift number:\n"))
+            if direction == "encode":
+                encrypt(text,shift)
+            elif direction == "decode":
+                decrypt(text,shift)
+
 main()
