@@ -1,3 +1,5 @@
+from cypher_text import logo
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
@@ -11,7 +13,7 @@ def encrypt(original_text, shift_amount):
         shifted_message = alphabet[range_index]
         encrypt_message += shifted_message
 
-    print(f"Encrypted message: {encrypt_message}")
+    print(f"Here's the encoded result: {encrypt_message}")
 def decrypt(text,shifts):
     decrypt_message = ""
     for letter in text:
@@ -20,22 +22,24 @@ def decrypt(text,shifts):
         range_index = index_message % len(alphabet)
         shifted_message = alphabet[range_index]
         decrypt_message += shifted_message
-    print(f"Decrypted message: {decrypt_message}")
+    print(f"Here's the decoded result: {decrypt_message}")
 
 def main():
-    print("Welcome to Encrypt your Message")
+    print(logo)
     is_over = False
-
     while not is_over:
         direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-        if direction == "q":
-            is_over = True
-        else:
-            text = input("Type your message:\n").lower()
-            shift = int(input("Type the shift number:\n"))
-            if direction == "encode":
-                encrypt(text,shift)
-            elif direction == "decode":
-                decrypt(text,shift)
+        text = input("Type your message:\n").lower()
+        shift = int(input("Type the shift number:\n"))
+        if direction == "encode":
+            encrypt(text,shift)
+        elif direction == "decode":
+            decrypt(text,shift)
 
+        again = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
+        if again == "yes":
+            main()
+        else:
+            is_over = True
+            print("Goodbye")
 main()
