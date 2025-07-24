@@ -30,6 +30,7 @@ def main():
     is_over = False
     while not is_over:
         direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+
         if direction != "encode" and direction != "decode":
             print("Invalid input")
             is_over = True
